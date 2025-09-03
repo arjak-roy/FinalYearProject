@@ -8,7 +8,7 @@ exports.create = async function (req, res) {
         message: dataFromClient.message,
         bloodGroup: dataFromClient.bloodGroup,
         disease: dataFromClient.disease,
-        doctorName: dataFromClient.doctorName
+        DoctorName: dataFromClient.DoctorName
     });
     console.log(report);
     return res.json(report);
