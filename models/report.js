@@ -23,12 +23,15 @@ const reportSchema = new mongoose.Schema({
     },
     disease: {
       type: String,
+      required: true,
     },
     Gender:{
-      typr: String
+      typr: String,
+      required: true
     },
     DoctorName: {
-      type: String
+      type: String,
+      default: "NA"
     },
     date: {
         type: Date,
