@@ -6,6 +6,7 @@ exports.create = async function (req, res) {
         name: dataFromClient.name,
         email: dataFromClient.email,
         message: dataFromClient.message,
+        bloodGroup: dataFromClient.bloodGroup
     });
     console.log(report);
     return res.json(report);
