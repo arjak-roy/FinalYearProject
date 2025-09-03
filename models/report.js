@@ -27,11 +27,11 @@ const reportSchema = new mongoose.Schema({
     },
     Gender:{
       typr: String,
-      required: true
+      required: true,
     },
     DoctorName: {
       type: String,
-      default: "NA"
+      default: "NA",
     },
     date: {
         type: Date,
