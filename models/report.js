@@ -26,7 +26,7 @@ const reportSchema = new mongoose.Schema({
       required: true,
     },
     Gender:{
-      typr: String,
+      type: String,
       required: true,
     },
     DoctorName: {
