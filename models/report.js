@@ -17,6 +17,22 @@ const reportSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    bloodGroup: {
+      type: String,
+      required: true,
+    },
+    disease: {
+      type: String,
+      required: true,
+    },
+    Gender:{
+      type: String,
+      required: true,
+    },
+    DoctorName: {
+      type: String,
+      default: "NA",
+    },
     date: {
         type: Date,
         default: Date.now,

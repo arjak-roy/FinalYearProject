@@ -14,4 +14,11 @@ router.post('/get', function(req, res, next) {
 router.get('/getall', function(req, res, next) {
   reportController.getall(req, res);
 });
+router.post('/update', function(req, res, next) {
+  reportController.update(req, res);
+});
+
+router.post('/delete', function(req, res, next) {
+  reportController.delete(req, res);
+})
 module.exports = router;
