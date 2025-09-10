@@ -31,8 +31,8 @@ exports.getall = async function (req, res) {
 exports.update = async function (req, res) {
     const dataFromClient = req.body;
     try {
-    const report = await reportSchema.findByIdAndUpdate({
-        _id: dataFromClient._id
+    const report = await reportSchema.findOneAndUpdate({
+        email: dataFromClient.email
         }, {
         name: dataFromClient.name,
         email: dataFromClient.email,
@@ -42,10 +42,18 @@ exports.update = async function (req, res) {
         DoctorName: dataFromClient.DoctorName,
         Gender: dataFromClient.Gender
     });
+    const resp = {
+        _id: dataFromClient._id,
+        name: dataFromClient.name,
+        email: dataFromClient.email,
+        message: dataFromClient.message,
+        bloodGroup: dataFromClient.bloodGroup,
+        disease: dataFromClient.disease,
+        DoctorName: dataFromClient.DoctorName,
+        Gender: dataFromClient.Gender
+    }
     console.log(report);
-    return res.status(200).json({
-        ServerMessage: "Report updated successfully"
-    });
+    return res.status(200).json(resp);
 
     } catch (error) {
         console.log(error);
