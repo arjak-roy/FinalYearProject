@@ -42,18 +42,9 @@ exports.update = async function (req, res) {
         DoctorName: dataFromClient.DoctorName,
         Gender: dataFromClient.Gender
     });
-    const resp = {
-        _id: dataFromClient._id,
-        name: dataFromClient.name,
-        email: dataFromClient.email,
-        message: dataFromClient.message,
-        bloodGroup: dataFromClient.bloodGroup,
-        disease: dataFromClient.disease,
-        DoctorName: dataFromClient.DoctorName,
-        Gender: dataFromClient.Gender
-    }
+
     console.log(report);
-    return res.status(200).json(resp);
+    return res.status(200).json(dataFromClient);
 
     } catch (error) {
         console.log(error);
