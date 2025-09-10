@@ -31,8 +31,8 @@ exports.getall = async function (req, res) {
 exports.update = async function (req, res) {
     const dataFromClient = req.body;
     try {
-    const report = await reportSchema.findByIdAndUpdate({
-        _id: dataFromClient._id
+    const report = await reportSchema.findOneAndUpdate({
+        email: dataFromClient.email
         }, {
         name: dataFromClient.name,
         email: dataFromClient.email,
@@ -56,8 +56,8 @@ exports.update = async function (req, res) {
 
 exports.delete = async function (req, res) {
     const dataFromClient = req.body;
-    const report = await reportSchema.findByIdAndDelete({
-        _id: dataFromClient._id
+    const report = await reportSchema.findOneAndDelete({
+        email: dataFromClient.email
     });
     console.log(report);
     return res.status(200).json({
